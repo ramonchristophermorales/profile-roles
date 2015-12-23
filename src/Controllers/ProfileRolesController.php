@@ -13,6 +13,6 @@ class ProfileRolesController extends Controller {
 	}
 
 	public function index() {
-		
+
 	}
 }
