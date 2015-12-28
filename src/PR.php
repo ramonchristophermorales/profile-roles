@@ -6,14 +6,6 @@
  */
 class PR {
 
-    protected $config;
-
-
-    public function __construct() {
-
-        $this->config = $this->getConfig();
-    }
-
     /**
      * returns the config array
      *

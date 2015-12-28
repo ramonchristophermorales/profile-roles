@@ -1,12 +1,15 @@
-<?php
+<?php use RamonChristopherMorales\ProfileRoles\PR;
 
-use RamonChristopherMorales\ProfileRoles;
-
-class ProfileRolesTest extends TestCase
+class ProfileRolesTest extends PHPUnit_Framework_TestCase
 {
+    protected $pr;
 
-    public function configTest()
+    public function __construct() {
+        $this->pr = new PR();
+    }
+
+    public function testConfig()
     {
-        $this->assertTrue(\PR::getConfig());
+        $this->assertTrue($this->pr->getConfig()?true:false);
     }
 }
