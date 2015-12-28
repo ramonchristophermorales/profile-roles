@@ -22,6 +22,8 @@ matrix:
 
 before_script:
   - composer self-update
+  - ls
+  - pwd
   - composer install
 
 script: phpunit
