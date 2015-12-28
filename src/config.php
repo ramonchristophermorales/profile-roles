@@ -19,5 +19,8 @@ return [
      * the relationship link for the profile roles into another table, under the roles table
      * one link to many roles
      */
-    'link' => 'user_id'
+    'link' => [
+        'table' => 'users',
+        'id' => 'user_id'
+    ],
 ];

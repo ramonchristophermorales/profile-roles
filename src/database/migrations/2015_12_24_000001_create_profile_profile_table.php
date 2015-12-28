@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRestaurantProfileRolesTable extends Migration {
+class CreateProfileProfileTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateRestaurantProfileRolesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('restaurant_profile_roles', function(Blueprint $table)
+		Schema::create(\PR::getConfig()['tables']['profiles'], function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('name');

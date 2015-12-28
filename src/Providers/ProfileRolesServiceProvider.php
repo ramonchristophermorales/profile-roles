@@ -19,10 +19,10 @@ class ProfileRolesServiceProvider extends ServiceProvider {
 			__DIR__.'/../config.php' => config_path('profileRoles.php'),
 		], 'config');
 
-//		$this->publishes([
-//			__DIR__.'/../views' => base_path('resources/views/ramonchristophermorales/profileRoles'),
-//		], 'views');
-//
+		$this->publishes([
+			__DIR__.'/../database/migrations' => base_path('database/migrations'),
+		], 'views');
+
 //		$this->publishes([
 //			__DIR__.'/../views' => base_path('resources/views/ramonchristophermorales/profileRoles'),
 //		], 'views');

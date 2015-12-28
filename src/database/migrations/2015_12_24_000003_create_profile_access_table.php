@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRestaurantProfileAccessTable extends Migration {
+class CreateProfileAccessTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,12 @@ class CreateRestaurantProfileAccessTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('restaurant_profile_access', function(Blueprint $table)
+		Schema::create(\PR::getConfig()['tables']['access'], function(Blueprint $table)
 		{
 			$table->increments('id');
 
-			$table->integer('restaurant_profile_id')->unsigned();
-			$table->foreign('restaurant_profile_id')->references('id')->on('restaurant_profile_roles')->onDelete('cascade');
+			$table->integer(\PR::getConfig()['tables']['profiles'] . '_id')->unsigned();
+			$table->foreign(\PR::getConfig()['tables']['profiles'] . '_id')->references('id')->on(\PR::getConfig()['tables']['profiles'])->onDelete('cascade');
 
 			$table->string('route_action');
 			$table->string('route_name');
