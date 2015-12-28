@@ -1,7 +1,7 @@
 {
     "name": "ramonchristophermorales/profile-roles",
     "description": "A simple roles profiling",
-    "keywords": ["role", "profile"],
+    "keywords": ["roles", "profile"],
     "homepage": "https://github.com/ramonchristophermorales",
     "license": "MIT",
     "authors": [
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "RamonChristopherMorales\\ProfileRoles\\":"packages/ramonchristophermorales/profile-roles/src"
+            "RamonChristopherMorales\\ProfileRoles\\":"src"
         }
     }
 }
