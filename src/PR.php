@@ -13,6 +13,71 @@ class PR {
     protected $configPath;
 
 
+    /************************************************************************************
+     *
+     * GETTERS
+     *
+     */
+
+    /**
+     * returns all registered route paths
+     *
+     * @return array
+     */
+    public function getRoutePaths() {
+
+        $return = [];
+
+        foreach(\Route::getRoutes() as $route) {
+            $return[] = $route->getPath();
+        }
+
+        return $return;
+    }
+
+    /**
+     * returns all registered route names
+     *
+     * @return array
+     */
+    public function getRouteNames() {
+
+        $return = [];
+
+        foreach (\Route::getRoutes() as $route) {
+
+            $routeName = $route->getName();
+
+            if ($routeName) {
+                $return[] = $routeName;
+            }
+        }
+
+        return $return;
+    }
+
+    /**
+     * returns all registered route action name
+     *
+     * @return array
+     */
+    public function getRouteActions() {
+
+        $return = [];
+
+        foreach (\Route::getRoutes() as $route) {
+
+            $actionNameExplode = explode("\\", $route->getActionName());
+            end($actionNameExplode);
+            $actionName = $actionNameExplode[key($actionNameExplode)];
+
+            $return[] = $actionName;
+        }
+
+        return $return;
+    }
+
+
     /**
      * returns configuration array from the config file
      *
